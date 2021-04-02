@@ -1,8 +1,7 @@
-/*lotogen 1.0.0.08*/
 /*Nachszon*/
 
 /*Generowanie zestawu licz pseudolowych
-wersja zak³ada mo¿liwoœæ pojawienia siê duplikatów*/
+wersja zakÂ³ada moÂ¿liwoÅ“Ã¦ pojawienia siÃª duplikatÃ³w*/
 
 #include <iostream>
 #include <ctime>
@@ -17,14 +16,14 @@ int main()
     //dolna granica zakresu lsowania
     int start_los;
 
-    //górna granica zakresu losowania
+    //gÃ³rna granica zakresu losowania
     int end_los;
 
-    //pierwsza czêœæ argumentu dla funkcji rand()
-    //drug¹ czêœci¹ bêdzie
+    //pierwsza czÃªÅ“Ã¦ argumentu dla funkcji rand()
+    //drugÂ¹ czÃªÅ“ciÂ¹ bÃªdzie
     int rand_los;
 
-    //liczba losow w jednym zak³adzie
+    //liczba losow w jednym zakÂ³adzie
     int ilosc_losow;
 
     //liczba_losowana
@@ -32,26 +31,62 @@ int main()
 
 
 
-    //liczba losow w jednym zak³adzie
+    //liczba losow w jednym zakÂ³adzie
     ilosc_losow=6;
+
+    int tabela_losow[ilosc_losow];
 
     //dolna granica zakresu lsowania
     start_los=1;
 
-    //górna granica zakresu losowania
+    //gÃ³rna granica zakresu losowania
     end_los=49;
 
 
 
-    //wyliczenie pierszwej czêœci argumentu funkcji rand()
-    //drug¹ czêœæ bêdzie stanowi³a zmienna start_los
-    //suma tych dwóch czêœci bêdzie stanowi³a pe³ny argument dla funkcji rand()
+    //wyliczenie pierszwej czÃªÅ“ci argumentu funkcji rand()
+    //drugÂ¹ czÃªÅ“Ã¦ bÃªdzie stanowiÂ³a zmienna start_los
+    //suma tych dwÃ³ch czÃªÅ“ci bÃªdzie stanowiÂ³a peÂ³ny argument dla funkcji rand()
     rand_los=(end_los-start_los)+1;
     srand(time(NULL));
 
 
 
 
+//utworzenie zmiennej ilosc_duplikatow
+int ilosc_duplikatow;
+
+//inicjalizacja zmiennej iloÅ›Ä‡ duplikatÃ³w
+ilosc_duplikatow=1;
+
+///Implementacja pÄ™tli wyliczajÄ…cej duplikaty
+///licznik wewnÄ™trzny=licznik_zewnÄ™trzny+1:
+///licznik_z=licznik_w+1
+
+while (ilosc_duplikatow!=0){
+
+        ilosc_duplikatow=0;
+
+        for (int licznik=0;licznik<ilosc_losow;licznik++){
+
+            liczba_losowana=rand()%rand_los+start_los;
+            tabela_losow[licznik]=liczba_losowana;
+        }
+
+for (int licznik=0;licznik<ilosc_losow-1;licznik++){
+
+    for (int licznik_w=licznik_w+1;licznik_w<ilosc_losow;licznik_w++){
+
+        if (tabela_losow[licznik]==tabela_losow[licznik_w]){
+
+            ilosc_duplikatow++;
+        }
+
+    }
+
+}
+
+}
 
 
 
@@ -59,7 +94,7 @@ int main()
     for (int licznik=0;licznik<ilosc_losow;licznik++){
 
             //wyliczenie liczby losowej
-    //wywo³anie funkcji rand() z pe³nym argumentem
+    //wywoÂ³anie funkcji rand() z peÂ³nym argumentem
     liczba_losowana=rand()%rand_los+start_los;
 
     //wyrzucenie na ekran liczby losowej
