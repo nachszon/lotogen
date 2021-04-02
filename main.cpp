@@ -5,7 +5,7 @@
 wersja zak³ada mo¿liwoœæ pojawienia siê duplikatów*/
 
 #include <iostream>
-// TODO (Nachszon#1#): W³¹czenie biblioteki <ctime>
+#include <ctime>
 
 
 using namespace std;
@@ -31,10 +31,9 @@ int main()
     int liczba_losowana;
 
 
+
     //liczba losow w jednym zak³adzie
     ilosc_losow=6;
-
-
 
     //dolna granica zakresu lsowania
     start_los=1;
@@ -48,20 +47,27 @@ int main()
     //drug¹ czêœæ bêdzie stanowi³a zmienna start_los
     //suma tych dwóch czêœci bêdzie stanowi³a pe³ny argument dla funkcji rand()
     rand_los=(end_los-start_los)+1;
-/* TODO (Nachszon#1#): Implementacja funkcji srand(time(NULL)
-(warunek: w³¹czona biblioteka ctime) */
+    srand(time(NULL));
 
 
 
-    //wyliczenie liczby losowej
+
+
+
+
+
+    for (int licznik=0;licznik<ilosc_losow;licznik++){
+
+            //wyliczenie liczby losowej
     //wywo³anie funkcji rand() z pe³nym argumentem
     liczba_losowana=rand()%rand_los+start_los;
 
-
-/// TODO (Nachszon#1#): Implementacja pêtli wywo³uj¹cej ilosc_losow liczb losowych
-
     //wyrzucenie na ekran liczby losowej
     cout << liczba_losowana << endl;
+
+
+    }
+
 
 
     //cout << "Hello world!" << endl;

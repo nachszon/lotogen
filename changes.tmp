@@ -1,2 +1,4 @@
 New	Podstawowe wyliczenie liczby losowej
 Added	Implementacja zmiennych do wywołania pętli wyliczającej ilos_losow liczb losowych
+Added	Implemenetacja startera randomizacji
+Added	Implementacja pętli losującej ilosc_losow liczb losowych
