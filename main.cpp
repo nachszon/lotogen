@@ -9,11 +9,32 @@ wersja zak³ada mo¿liwoœæ pojawienia siê duplikatów*/
 
 using namespace std;
 
+int func_generuj_jedna_liczba(int start_los,int end_los){
+
+    //pierwsza czêœæ argumentu dla funkcji rand()
+    int rand_los;
+
+    //liczba_losowana
+    int liczba_losowana;
+
+    //wyliczenie pierszwej czêœci argumentu funkcji rand()
+    //drug¹ czêœæ bêdzie stanowi³a zmienna start_los
+    //suma tych dwóch czêœci bêdzie stanowi³a pe³ny argument dla funkcji rand()
+    rand_los=(end_los-start_los)+1;
+    liczba_losowana=rand()%rand_los+start_los;
+
+    return liczba_losowana;
+
+
+    }
+
 
 int main()
 {
 
-    //dolna granica zakresu lsowania
+
+    cout<<func_generuj_jedna_liczba(1,49)<<endl;
+    /*//dolna granica zakresu lsowania
     int start_los;
 
     //górna granica zakresu losowania
@@ -44,10 +65,7 @@ int main()
 
 
 
-    //wyliczenie pierszwej czêœci argumentu funkcji rand()
-    //drug¹ czêœæ bêdzie stanowi³a zmienna start_los
-    //suma tych dwóch czêœci bêdzie stanowi³a pe³ny argument dla funkcji rand()
-    rand_los=(end_los-start_los)+1;
+
     srand(time(NULL));
 
 
@@ -69,7 +87,7 @@ while (ilosc_duplikatow!=0){
 
         for (int licznik=0;licznik<ilosc_losow;licznik++){
 
-            liczba_losowana=rand()%rand_los+start_los;
+
             tabela_losow[licznik]=liczba_losowana;
         }
 
@@ -105,6 +123,6 @@ for (int licznik=0;licznik<ilosc_losow-1;licznik++){
 
 
 
-    //cout << "Hello world!" << endl;
+    //cout << "Hello world!" << endl;*/
     return 0;
 }

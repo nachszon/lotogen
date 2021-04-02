@@ -3,3 +3,4 @@ Added	Implementacja zmiennych do wywołania pętli wyliczającej ilos_losow licz
 Added	Implemenetacja startera randomizacji
 Added	Implementacja pętli losującej ilosc_losow liczb losowych
 Cleaned	Usunięcie duplikatów z tablicy losów
+Updated	Zamknięcie funkcjonalności generowania liczby losowej w funkcję fun_generuj_jedna_liczba(int,int)
